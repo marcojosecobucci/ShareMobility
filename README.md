@@ -31,8 +31,3 @@ Modalità di lavoro
 Questo è un esercizio pensato per essere fatto in gruppo perciò ci aspettiamo una soluzione per ogni stanza. È obbligatorio creare una repository su cui aggiungere come collaboratore ogni membro del team. Massima libertà su come spartirvi il lavoro. Non è obbligatorio ma fortemente gradito un disegno con lo schema delle classi (va bene anche su carta, basta che si capisce).
 Suggerimenti
 
-HINT 1: Non esiste "la soluzione" di questo esercizio, è possibile tirare fuori due schemi di classi molto diversi tra di loro ed entrambi validi, esistono però soluzioni sbagliate che possono creare problemi di vario tipo.
-
-HINT 2: Se avete una domanda da fare sul sistema, fatela sul canale discord, è più veloce e potrebbe essere d'aiuto per altri gruppi.
-
-HINT 3: Se pensate che una certa libreria esterna può esservi utile per risolvere un determinato problema...Usatela!
