@@ -27,6 +27,15 @@ public class Veicoli {
         this.posizioneGeografica = posizioneGeografica;
     }
 
+
+    public StatoVeicolo getStatoVeicolo() {
+        return statoVeicolo;
+    }
+
+    public String getPosizioneGeografica() {
+        return posizioneGeografica;
+    }
+
     @Override
     public String toString() {
         return "ID='" + ID + '\'' +
@@ -35,13 +44,5 @@ public class Veicoli {
                 ", statoVeicolo=" + statoVeicolo +
                 ", posizioneGeografica='" + posizioneGeografica + '\''
                 ;
-    }
-
-    public StatoVeicolo getStatoVeicolo() {
-        return statoVeicolo;
-    }
-
-    public String getPosizioneGeografica() {
-        return posizioneGeografica;
     }
 }
