@@ -11,13 +11,11 @@ import java.util.List;
 
 public class Database {
 
-    public List<Furgoncini> furgonciniList;
+    private List<Furgoncini> furgonciniList;
     private List<Automobile> automobileList;
     private List<Scooter> scooterList;
     private List<MonopattinoElettrico> monopattinoElettricoList;
     private List<Bicicletta> biciclettaList;
-    private Patenti patentiList;
-    private Caschi caschiList;
     private List<Utente> utenteList;
 
 
@@ -41,7 +39,7 @@ public class Database {
 
     public void furgonciniList() {
         furgonciniList.add(new Furgoncini("F1", Patenti.PATENTE_C, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "120,33", "AF224BC", 25));
-        furgonciniList.add(new Furgoncini("F2", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,67", "AF354F", 80));
+        furgonciniList.add(new Furgoncini("F2", Patenti.PATENTE_C, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "100,67", "AF354F", 80));
     }
 
     private void automobileList() {
@@ -105,11 +103,8 @@ public class Database {
                         break;
                 }
             }
-        } else {
-            return Patenti.NESSUNA;
         }
-
-        return patentiList;
+        return Patenti.NESSUNA;
     }
 
     public Caschi addNewCasco(String scelte) {
@@ -123,11 +118,8 @@ public class Database {
                         break;
                 }
             }
-        } else {
-            return Caschi.NESSUNO;
         }
-
-        return caschiList;
+        return Caschi.NESSUNO;
     }
 
     public Utente addNewUtente(String ID, String nome, String cognome, String dataDiNascita, String CF, Patenti patente, Caschi casco, int credito) {
