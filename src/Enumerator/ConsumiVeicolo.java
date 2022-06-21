@@ -1,7 +1,7 @@
 package Enumerator;
 
 public enum ConsumiVeicolo {
-    BICICLETTA(0), MONOPATTINO(1), SCOOTER(15), AUTOMOBILE(10), FURGONCINO(5);
+    MONOPATTINO(1), SCOOTER(15), AUTOMOBILE(10), FURGONCINO(5);
 
     private int ConsumiVeicoloKmPerLitro;
 

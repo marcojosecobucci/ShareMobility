@@ -16,6 +16,7 @@ public class Scooter extends Veicoli {
     private static int kmConUnLitro = consumiScooter.getValue();
     private static Serbatoi serbatoioScooter = Serbatoi.SCOOTER;
     private static int capienzaSerbatoio = serbatoioScooter.getValue();
+
     public Scooter(String ID, List<Patenti> patente, List<Caschi> casco, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
         super(ID, patente, casco, statoVeicolo, posizioneGeografica);
         this.targa = targa;
