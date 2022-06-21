@@ -17,7 +17,7 @@ public class Scooter extends Veicoli {
     private static Serbatoi serbatoioScooter = Serbatoi.SCOOTER;
     private static int capienzaSerbatoio = serbatoioScooter.getValue();
 
-    public Scooter(String ID, List<Patenti> patente, List<Caschi> casco, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
+    public Scooter(String ID, Patenti patente, Caschi casco, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
         super(ID, patente, casco, statoVeicolo, posizioneGeografica);
         this.targa = targa;
         this.ltCarburante = ltCarburante;

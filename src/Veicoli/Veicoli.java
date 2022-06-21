@@ -7,19 +7,19 @@ import Enumerator.StatoVeicolo;
 
 import java.util.List;
 
-public class Veicoli {
+public abstract class Veicoli {
 
     private String ID;
 
-    private List<Patenti> patente;
+    private Patenti patente;
 
-    private List<Caschi> casco;
+    private Caschi casco;
 
     private StatoVeicolo statoVeicolo;
 
     private String posizioneGeografica;
 
-    public Veicoli(String ID, List<Patenti> patente, List<Caschi> casco, StatoVeicolo statoVeicolo, String posizioneGeografica) {
+    public Veicoli(String ID, Patenti patente, Caschi casco, StatoVeicolo statoVeicolo, String posizioneGeografica) {
         this.ID = ID;
         this.patente = patente;
         this.casco = casco;
@@ -27,6 +27,9 @@ public class Veicoli {
         this.posizioneGeografica = posizioneGeografica;
     }
 
+    public String getID() {
+        return ID;
+    }
 
     public StatoVeicolo getStatoVeicolo() {
         return statoVeicolo;

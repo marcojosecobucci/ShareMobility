@@ -18,7 +18,7 @@ public class Furgoncini extends Veicoli {
     private static Serbatoi serbatoioFurgoncino = Serbatoi.FURGONCINO;
     private static int capienzaSerbatoio = serbatoioFurgoncino.getValue();
 
-    public Furgoncini(String ID, List<Patenti> patente, List<Caschi> casco, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
+    public Furgoncini(String ID, Patenti patente, Caschi casco, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
         super(ID, patente, casco, statoVeicolo, posizioneGeografica);
         this.targa = targa;
         this.ltCarburante = ltCarburante;

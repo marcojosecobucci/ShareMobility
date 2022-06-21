@@ -15,7 +15,7 @@ public class MonopattinoElettrico extends Veicoli {
     private static Batteria batteriaMonopattino = Batteria.MONOPATTINO;
     private static int batteria = batteriaMonopattino.getValue();
 
-    public MonopattinoElettrico(String ID, List<Patenti> patente, List<Caschi> casco, StatoVeicolo statoVeicolo, String posizioneGeografica, int batteriaRestante) {
+    public MonopattinoElettrico(String ID, Patenti patente, Caschi casco, StatoVeicolo statoVeicolo, String posizioneGeografica, int batteriaRestante) {
         super(ID, patente, casco, statoVeicolo, posizioneGeografica);
         this.batteriaRestante = batteriaRestante;
     }

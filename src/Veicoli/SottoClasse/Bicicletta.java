@@ -12,7 +12,7 @@ public class Bicicletta extends Veicoli {
     private static ListinoPrezziAlMin prezziBici = ListinoPrezziAlMin.BICICLETTA;
     private static float prezzoAlMinuto = prezziBici.getValue();
 
-    public Bicicletta(String ID, List<Patenti> patente, List<Caschi> casco, StatoVeicolo statoVeicolo, String posizioneGeografica) {
+    public Bicicletta(String ID, Patenti patente, Caschi casco, StatoVeicolo statoVeicolo, String posizioneGeografica) {
         super(ID, patente, casco, statoVeicolo, posizioneGeografica);
     }
 

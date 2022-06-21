@@ -11,107 +11,129 @@ import java.util.List;
 
 public class Database {
 
-    private List<Furgoncini> furgonciniList;
+    public List<Furgoncini> furgonciniList;
     private List<Automobile> automobileList;
     private List<Scooter> scooterList;
     private List<MonopattinoElettrico> monopattinoElettricoList;
     private List<Bicicletta> biciclettaList;
-    private List<Patenti> patentiList;
-    private List<Caschi> caschiList;
+    private Patenti patentiList;
+    private Caschi caschiList;
     private List<Utente> utenteList;
 
+
     public Database() {
-        patentiList = new ArrayList<>();
-        caschiList = new ArrayList<>();
         furgonciniList = new ArrayList<>();
         automobileList = new ArrayList<>();
         scooterList = new ArrayList<>();
         monopattinoElettricoList = new ArrayList<>();
         biciclettaList = new ArrayList<>();
         utenteList = new ArrayList<>();
+        //Accensione DB (Simulato)
+        furgonciniList();
+        automobileList();
+        scooterList();
+        monopattinoElettricoList();
+        biciclettaList();
+        //utenteList();
+        alphaUser();
+        betaUser();
     }
 
-    public List<Furgoncini> furgonciniList() {
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_C);
-        caschiList.clear();
-        caschiList.add(Caschi.NESSUNO);
-        furgonciniList.add(new Furgoncini("F1", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "120,33", "AF224BC", 25));
+    public void furgonciniList() {
+        furgonciniList.add(new Furgoncini("F1", Patenti.PATENTE_C, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "120,33", "AF224BC", 25));
         furgonciniList.add(new Furgoncini("F2", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,67", "AF354F", 80));
-        return furgonciniList;
     }
 
-    public List<Automobile> automobileList() {
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_C);
-        patentiList.add(Patenti.PATENTE_B);
-        caschiList.clear();
-        caschiList.add(Caschi.NESSUNO);
-        automobileList.add(new Automobile("A1", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,33", "AB123CF", 80));
-        automobileList.add(new Automobile("A2", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,67", "AC244CF", 40));
-        return automobileList;
+    private void automobileList() {
+        automobileList.add(new Automobile("A1", Patenti.PATENTE_B, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "100,33", "AB123CF", 80));
+        automobileList.add(new Automobile("A2", Patenti.PATENTE_B, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "100,67", "AC244CF", 40));
     }
 
-    public List<Scooter> scooterList() {
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_C);
-        patentiList.add(Patenti.PATENTE_B);
-        patentiList.add(Patenti.PATENTE_A);
-        caschiList.clear();
-
-        caschiList.add(Caschi.CASCO_MOTO);
-        scooterList.add(new Scooter("S1", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "120,33", "AA12345", 20));
-        scooterList.add(new Scooter("S2", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,67", "AB56786", 20));
-        return scooterList;
+    private void scooterList() {
+        scooterList.add(new Scooter("S1", Patenti.PATENTE_A, Caschi.CASCO, StatoVeicolo.DISPONIBILE, "120,33", "AA12345", 20));
+        scooterList.add(new Scooter("S2", Patenti.PATENTE_A, Caschi.CASCO, StatoVeicolo.DISPONIBILE, "100,67", "AB56786", 20));
     }
 
-    public List<MonopattinoElettrico> monopattinoElettricoList() {
-        patentiList.clear();
-        patentiList.add(Patenti.NESSUNA);
-        caschiList.clear();
-        caschiList.add(Caschi.CASCO_MOTO);
-        caschiList.add(Caschi.CASCO_BICI);
-        monopattinoElettricoList.add(new MonopattinoElettrico("M1", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "120,33", 100));
-        monopattinoElettricoList.add(new MonopattinoElettrico("M2", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,67", 50));
-        return monopattinoElettricoList;
+    private void monopattinoElettricoList() {
+        monopattinoElettricoList.add(new MonopattinoElettrico("M1", Patenti.NESSUNA, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "120,33", 100));
+        monopattinoElettricoList.add(new MonopattinoElettrico("M2", Patenti.NESSUNA, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "100,67", 50));
     }
 
-    public List<Bicicletta> biciclettaList() {
-        patentiList.clear();
-        patentiList.add(Patenti.NESSUNA);
-        caschiList.clear();
-        caschiList.add(Caschi.NESSUNO);
-        biciclettaList.add(new Bicicletta("B1", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "120,33"));
-        biciclettaList.add(new Bicicletta("B2", patentiList, caschiList, StatoVeicolo.DISPONIBILE, "100,67"));
-        return biciclettaList;
+    private void biciclettaList() {
+        biciclettaList.add(new Bicicletta("B1", Patenti.NESSUNA, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "120,33"));
+        biciclettaList.add(new Bicicletta("B2", Patenti.NESSUNA, Caschi.NESSUNO, StatoVeicolo.DISPONIBILE, "100,67"));
     }
 
-    public List<Utente> utenteList() {
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_C);
-        caschiList.clear();
-        caschiList.add(Caschi.NESSUNO);
-        utenteList.add(new Utente("User1", "User1", "Uno", "02-07-1995", "USERUNO1", patentiList, caschiList, 100));
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_B);
-        caschiList.clear();
-        caschiList.add(Caschi.NESSUNO);
-        utenteList.add(new Utente("User2", "User2", "Due", "02-07-1995", "USERDUE2", patentiList, caschiList, 100));
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_A);
-        caschiList.clear();
-        caschiList.add(Caschi.CASCO_MOTO);
-        utenteList.add(new Utente("User3", "User3", "Tre", "02-07-1995", "USERTRE3", patentiList, caschiList, 24));
-        patentiList.clear();
-        patentiList.add(Patenti.PATENTE_B);
-        caschiList.clear();
-        caschiList.add(Caschi.CASCO_BICI);
-        utenteList.add(new Utente("User4", "User4", "Quattro", "02-07-1995", "USERQUATTRO4", patentiList, caschiList, 13));
-        patentiList.clear();
-        patentiList.add(Patenti.NESSUNA);
-        caschiList.clear();
-        caschiList.add(Caschi.NESSUNO);
-        utenteList.add(new Utente("User5", "User5", "Cinque", "02-07-1995", "USERCINQUE5", patentiList, caschiList, 10));
-        return utenteList;
+    private void alphaUser() {
+        utenteList.add(new Utente("alphaUser", "Alpha", "User", "02-07-1995", "LPSR", Patenti.PATENTE_C, Caschi.NESSUNO, 100));
     }
+
+    private void betaUser() {
+        utenteList.add(new Utente("betaUser", "Beta", "User", "02-07-1995", "BTSR", Patenti.PATENTE_B, Caschi.CASCO, 100));
+    }
+
+    public Bicicletta getByIdBicicletta(String ID) {
+        for (Bicicletta bicicletta : biciclettaList) {
+            if (bicicletta.getID().equals(ID)) {
+                return bicicletta;
+            }
+        }
+        return null;
+    }
+
+    public Utente getByIdUser(String ID) {
+        for (Utente utente : utenteList) {
+            if (utente.getID().equals(ID)) {
+                return utente;
+            }
+        }
+        return null;
+    }
+
+    public Patenti addNewPatente(String scelta) {
+        scelta = scelta.trim();
+        if (!scelta.isEmpty()) {
+            for (int i = 0; i < 1; i++) {
+                switch (scelta.charAt(i)) {
+                    case '1':
+                        return Patenti.PATENTE_A;
+                    case '2':
+                        return Patenti.PATENTE_B;
+                    case '3':
+                        return Patenti.PATENTE_C;
+                    default:
+                        break;
+                }
+            }
+        } else {
+            return Patenti.NESSUNA;
+        }
+
+        return patentiList;
+    }
+
+    public Caschi addNewCasco(String scelte) {
+        scelte = scelte.trim();
+        if (!scelte.isEmpty()) {
+            for (int i = 0; i < 1; i++) {
+                switch (scelte.charAt(i)) {
+                    case '1':
+                        return Caschi.CASCO;
+                    default:
+                        break;
+                }
+            }
+        } else {
+            return Caschi.NESSUNO;
+        }
+
+        return caschiList;
+    }
+
+    public Utente addNewUtente(String ID, String nome, String cognome, String dataDiNascita, String CF, Patenti patente, Caschi casco, int credito) {
+        utenteList.add(new Utente(ID, nome, cognome, dataDiNascita, CF, patente, casco, credito));
+        return utenteList.get(utenteList.size() - 1);
+    }
+
+
 }
