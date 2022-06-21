@@ -70,15 +70,6 @@ public class Database {
         utenteList.add(new Utente("betaUser", "Beta", "User", "02-07-1995", "BTSR", Patenti.PATENTE_B, Caschi.CASCO, 100));
     }
 
-    public Bicicletta getByIdBicicletta(String ID) {
-        for (Bicicletta bicicletta : biciclettaList) {
-            if (bicicletta.getID().equals(ID)) {
-                return bicicletta;
-            }
-        }
-        return null;
-    }
-
     public Utente getByIdUser(String ID) {
         for (Utente utente : utenteList) {
             if (utente.getID().equals(ID)) {
@@ -111,11 +102,8 @@ public class Database {
         scelte = scelte.trim();
         if (!scelte.isEmpty()) {
             for (int i = 0; i < 1; i++) {
-                switch (scelte.charAt(i)) {
-                    case '1':
-                        return Caschi.CASCO;
-                    default:
-                        break;
+                if (scelte.charAt(i) == '1') {
+                    return Caschi.CASCO;
                 }
             }
         }
