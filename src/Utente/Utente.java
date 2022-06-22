@@ -88,6 +88,7 @@ public class Utente {
     }
 
     private void menuUtente(Utente utente) {
+        System.out.println(utente);
         int counterMenu = 1;
         String menu = "";
 
@@ -95,7 +96,7 @@ public class Utente {
         counterMenu++;
         menu += counterMenu + "- " + "Affitta Monopattino \n";
         counterMenu++;
-        if (utente.patenti.equals(Patenti.PATENTE_A) || utente.patenti.equals(Patenti.PATENTE_B) || utente.patenti.equals(Patenti.PATENTE_C)
+        if ((utente.patenti.equals(Patenti.PATENTE_A) || utente.patenti.equals(Patenti.PATENTE_B) || utente.patenti.equals(Patenti.PATENTE_C))
                 && utente.caschi.equals(Caschi.CASCO)) {
             menu += counterMenu + "- " + "Affitta Scooter \n";
             counterMenu++;
