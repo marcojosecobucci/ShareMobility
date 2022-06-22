@@ -7,5 +7,7 @@ public class Disclaimer {
         Utente utente = new Utente(db);
 
         utente.login();
+
+        System.out.println();
     }
 }
