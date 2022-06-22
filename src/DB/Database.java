@@ -38,28 +38,28 @@ public class Database {
     }
 
     public void furgonciniList() {
-        furgonciniList.add(new Furgoncini("F1",  StatoVeicolo.DISPONIBILE, "120,33", "AF224BC", 25));
-        furgonciniList.add(new Furgoncini("F2",  StatoVeicolo.DISPONIBILE, "100,67", "AF354F", 80));
+        furgonciniList.add(new Furgoncini("F1", StatoVeicolo.DISPONIBILE, "120,33", "AF224BC", 25));
+        furgonciniList.add(new Furgoncini("F2", StatoVeicolo.DISPONIBILE, "100,67", "AF354F", 80));
     }
 
     private void automobileList() {
-        automobileList.add(new Automobile("A1",  StatoVeicolo.DISPONIBILE, "100,33", "AB123CF", 80));
-        automobileList.add(new Automobile("A2",  StatoVeicolo.DISPONIBILE, "100,67", "AC244CF", 40));
+        automobileList.add(new Automobile("A1", StatoVeicolo.DISPONIBILE, "100,33", "AB123CF", 80));
+        automobileList.add(new Automobile("A2", StatoVeicolo.DISPONIBILE, "100,67", "AC244CF", 40));
     }
 
     private void scooterList() {
-        scooterList.add(new Scooter("S1",  StatoVeicolo.DISPONIBILE, "120,33", "AA12345", 20));
-        scooterList.add(new Scooter("S2",  StatoVeicolo.DISPONIBILE, "100,67", "AB56786", 20));
+        scooterList.add(new Scooter("S1", StatoVeicolo.DISPONIBILE, "120,33", "AA12345", 20));
+        scooterList.add(new Scooter("S2", StatoVeicolo.DISPONIBILE, "100,67", "AB56786", 20));
     }
 
     private void monopattinoElettricoList() {
-        monopattinoElettricoList.add(new MonopattinoElettrico("M1",  StatoVeicolo.DISPONIBILE, "120,33", 100));
-        monopattinoElettricoList.add(new MonopattinoElettrico("M2",  StatoVeicolo.DISPONIBILE, "100,67", 50));
+        monopattinoElettricoList.add(new MonopattinoElettrico("M1", StatoVeicolo.DISPONIBILE, "120,33", 100));
+        monopattinoElettricoList.add(new MonopattinoElettrico("M2", StatoVeicolo.DISPONIBILE, "100,67", 50));
     }
 
     private void biciclettaList() {
         biciclettaList.add(new Bicicletta("B1", StatoVeicolo.DISPONIBILE, "120,33"));
-        biciclettaList.add(new Bicicletta("B2",  StatoVeicolo.DISPONIBILE, "100,67"));
+        biciclettaList.add(new Bicicletta("B2", StatoVeicolo.DISPONIBILE, "100,67"));
     }
 
     private void alphaUser() {
@@ -114,6 +114,4 @@ public class Database {
         utenteList.add(new Utente(ID, nome, cognome, dataDiNascita, CF, patente, casco, credito));
         return utenteList.get(utenteList.size() - 1);
     }
-
-
 }
