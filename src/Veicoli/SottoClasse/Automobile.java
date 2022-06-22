@@ -20,8 +20,8 @@ public class Automobile extends Veicoli {
     private static Serbatoi serbatoioAutomobile = Serbatoi.AUTOMOBILE;
     private static int capienzaSerbatoio = serbatoioAutomobile.getValue();
 
-    public Automobile(String ID, Patenti patente, Caschi casco, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
-        super(ID, patente, casco, statoVeicolo, posizioneGeografica);
+    public Automobile(String ID, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
+        super(ID, Patenti.PATENTE_B, Caschi.NESSUNO, statoVeicolo, posizioneGeografica);
         this.targa = targa;
         this.ltCarburante = ltCarburante;
     }
