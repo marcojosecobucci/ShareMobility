@@ -10,7 +10,7 @@ import Veicoli.Veicoli;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database{
+public class Database {
 
     private List<Veicoli> furgonciniList;
     private List<Veicoli> automobileList;
@@ -18,7 +18,7 @@ public class Database{
     private List<Veicoli> monopattinoElettricoList;
     private List<Veicoli> biciclettaList;
     private List<Utente> utenteList;
-    List<Veicoli> veicoliDisponibili ;
+    List<Veicoli> veicoliDisponibili;
 
 
     public Database() {
@@ -28,7 +28,7 @@ public class Database{
         monopattinoElettricoList = new ArrayList<>();
         biciclettaList = new ArrayList<>();
         utenteList = new ArrayList<>();
-        veicoliDisponibili=new ArrayList<>();
+        veicoliDisponibili = new ArrayList<>();
         //Accensione DB (Simulato)
         furgonciniList();
         automobileList();
@@ -139,17 +139,15 @@ public class Database{
                 lista = furgonciniList;
                 break;
         }
-         for (Veicoli veicolo : lista){
-             if (veicolo.getStatoVeicolo().equals(StatoVeicolo.DISPONIBILE)) {
-                 System.out.println("ID: " + veicolo.getID() +
-                                    "si trova: " + veicolo.getPosizioneGeografica()) ;
-                 veicoliDisponibili.add(veicolo);
+        for (Veicoli veicolo : lista) {
+            if (veicolo.getStatoVeicolo().equals(StatoVeicolo.DISPONIBILE)) {
+                System.out.println("ID: " + veicolo.getID() +
+                        "si trova: " + veicolo.getPosizioneGeografica());
+                veicoliDisponibili.add(veicolo);
 
 
-             }
-         }
-
-
+            }
+        }
     }
 
     public List<Veicoli> getVeicoliDisponibili() {

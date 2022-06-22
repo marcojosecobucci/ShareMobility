@@ -4,8 +4,6 @@ import Administrator.Administrator;
 import Enumerator.*;
 import Veicoli.Veicoli;
 
-import java.util.List;
-
 public class MonopattinoElettrico extends Veicoli {
     private int batteriaRestante;
 

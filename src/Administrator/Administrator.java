@@ -6,13 +6,12 @@ public class Administrator {
 
     public static float guadagnoSocieta;
 
-
     public Administrator() {
         guadagnoSocieta = 0;
     }
 
- public static void consumiBenzina(int lt){
-        guadagnoSocieta -= lt*2;
-     System.out.println("Il guadagno attuale della socetà è: "+guadagnoSocieta);
- }
+    public static void consumiBenzina(int lt) {
+        guadagnoSocieta -= lt * 2;
+        System.out.println("Il guadagno attuale della socetà è: " + guadagnoSocieta);
+    }
 }

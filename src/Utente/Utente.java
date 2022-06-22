@@ -73,17 +73,13 @@ public class Utente {
     }
 
     private Patenti inserisciPatentiUtente() {
-        System.out.println("Patenti: \n  1- PATENTE A \n 2- PATENT B \n 3- PATENTE C " +
-                "\n Inserisci la patente che possiedi con il numero raffigurato \n" +
-                "In caso non hai nessuna patente lascia vuoto");
+        System.out.println("Patenti: \n  1- PATENTE A \n 2- PATENT B \n 3- PATENTE C " + "\n Inserisci la patente che possiedi con il numero raffigurato \n" + "In caso non hai nessuna patente lascia vuoto");
         String patentiIns = scanner.nextLine();
         return db.addNewPatente(patentiIns);
     }
 
     private Caschi inserisciCaschiUtente() {
-        System.out.println("Caschi: \n  1-- CASCO MOTO" +
-                "\n Digita 1 se possiedi un casco \n" +
-                "In caso non hai nessuna patente lascia vuoto");
+        System.out.println("Caschi: \n  1-- CASCO MOTO" + "\n Digita 1 se possiedi un casco \n" + "In caso non hai nessuna patente lascia vuoto");
         String caschiIns = scanner.nextLine();
         return db.addNewCasco(caschiIns);
     }
@@ -102,8 +98,7 @@ public class Utente {
         menu += counterMenu + "- " + "Affitta Monopattino \n";
         arreyScelteMenu[counterMenu - 1] = "monopattino";
         counterMenu++;
-        if ((utente.patenti.equals(Patenti.PATENTE_A) || utente.patenti.equals(Patenti.PATENTE_B) || utente.patenti.equals(Patenti.PATENTE_C))
-                && utente.caschi.equals(Caschi.CASCO)) {
+        if ((utente.patenti.equals(Patenti.PATENTE_A) || utente.patenti.equals(Patenti.PATENTE_B) || utente.patenti.equals(Patenti.PATENTE_C)) && utente.caschi.equals(Caschi.CASCO)) {
             menu += counterMenu + "- " + "Affitta Scooter \n";
             arreyScelteMenu[counterMenu - 1] = "scooter";
             counterMenu++;
@@ -170,16 +165,7 @@ public class Utente {
 
     @Override
     public String toString() {
-        return "Utente{" +
-                "ID='" + ID + '\'' +
-                ", nome='" + nome + '\'' +
-                ", cognome='" + cognome + '\'' +
-                ", dataDiNascita='" + dataDiNascita + '\'' +
-                ", CF='" + CF + '\'' +
-                ", patenti=" + patenti +
-                ", caschi=" + caschi +
-                ", credito=" + credito +
-                '}';
+        return "Utente{" + "ID='" + ID + '\'' + ", nome='" + nome + '\'' + ", cognome='" + cognome + '\'' + ", dataDiNascita='" + dataDiNascita + '\'' + ", CF='" + CF + '\'' + ", patenti=" + patenti + ", caschi=" + caschi + ", credito=" + credito + '}';
     }
 
     public void affittaVeicolo(String s) {

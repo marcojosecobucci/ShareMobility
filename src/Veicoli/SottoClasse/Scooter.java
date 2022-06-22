@@ -2,10 +2,8 @@ package Veicoli.SottoClasse;
 
 import Administrator.Administrator;
 import Enumerator.*;
-import Interaces.Rifornimento;
+import Interfaces.Rifornimento;
 import Veicoli.Veicoli;
-
-import java.util.List;
 
 public class Scooter extends Veicoli implements Rifornimento {
     private String targa;

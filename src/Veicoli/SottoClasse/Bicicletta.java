@@ -6,8 +6,6 @@ import Enumerator.Patenti;
 import Enumerator.StatoVeicolo;
 import Veicoli.Veicoli;
 
-import java.util.List;
-
 public class Bicicletta extends Veicoli {
     private static ListinoPrezziAlMin prezziBici = ListinoPrezziAlMin.BICICLETTA;
     private static float prezzoAlMinuto = prezziBici.getValue();
