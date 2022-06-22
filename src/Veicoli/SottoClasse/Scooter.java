@@ -1,11 +1,13 @@
 package Veicoli.SottoClasse;
 
+import Administrator.Administrator;
 import Enumerator.*;
+import Interaces.Rifornimento;
 import Veicoli.Veicoli;
 
 import java.util.List;
 
-public class Scooter extends Veicoli {
+public class Scooter extends Veicoli implements Rifornimento {
     private String targa;
 
     private int ltCarburante;
@@ -33,5 +35,11 @@ public class Scooter extends Veicoli {
                 "targa='" + targa + '\'' +
                 ", ltCarburante=" + ltCarburante +
                 "\n";
+    }
+
+    @Override
+    public void pieno() {
+        Administrator.consumiBenzina(capienzaSerbatoio - ltCarburante);
+        ltCarburante = capienzaSerbatoio;
     }
 }
