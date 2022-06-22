@@ -3,6 +3,7 @@ package Utente;
 import DB.Database;
 import Enumerator.Caschi;
 import Enumerator.Patenti;
+import Veicoli.Veicoli;
 
 import java.util.List;
 import java.util.Scanner;
@@ -88,34 +89,75 @@ public class Utente {
     }
 
     private void menuUtente(Utente utente) {
+        String[] arreyScelteMenu = new String[6];
+
         System.out.println(utente);
         int counterMenu = 1;
         String menu = "";
 
         menu += counterMenu + "- " + "Affitta Bicicletta \n";
+
+        arreyScelteMenu[counterMenu - 1] = "bicicletta";
         counterMenu++;
         menu += counterMenu + "- " + "Affitta Monopattino \n";
+        arreyScelteMenu[counterMenu - 1] = "monopattino";
         counterMenu++;
         if ((utente.patenti.equals(Patenti.PATENTE_A) || utente.patenti.equals(Patenti.PATENTE_B) || utente.patenti.equals(Patenti.PATENTE_C))
                 && utente.caschi.equals(Caschi.CASCO)) {
             menu += counterMenu + "- " + "Affitta Scooter \n";
+            arreyScelteMenu[counterMenu - 1] = "scooter";
             counterMenu++;
         }
         if (utente.patenti.equals(Patenti.PATENTE_B) || utente.patenti.equals(Patenti.PATENTE_C)) {
             menu += counterMenu + "- " + "Affitta Automobile \n";
+            arreyScelteMenu[counterMenu - 1] = "automobile";
             counterMenu++;
         }
         if (utente.patenti.equals(Patenti.PATENTE_C)) {
             menu += counterMenu + "- " + "Affitta Furgoncino \n";
+            arreyScelteMenu[counterMenu - 1] = "furgoncino";
             counterMenu++;
         }
         menu += counterMenu + "- " + "Aggiungi Credito \n";
+        arreyScelteMenu[counterMenu - 1] = "credito";
         counterMenu++;
         menu += counterMenu + "- " + "Chiudi APP \n";
+        arreyScelteMenu[counterMenu - 1] = "esci";
 
 
         System.out.println(menu);
         System.out.println("\n" + "CREDITO RESIDUO: " + utente.credito + "\n");
+        sceltaMenu(arreyScelteMenu);
+        System.out.println("Digita l'id del veicolo che ti interessa: ");
+        affittaVeicolo(scanner.nextLine());
+    }
+
+    private void sceltaMenu(String[] arreyScelteMenu) {
+        System.out.println("Inserisci il numero della scelta: ");
+        int scelta = scanner.nextInt();
+        do {
+            switch (arreyScelteMenu[scelta - 1]) {
+                case "automobile":
+                    db.veicoloDisponibile('A');
+                    break;
+                case "bicicletta":
+                    db.veicoloDisponibile('B');
+                    break;
+                case "furgoncino":
+                    db.veicoloDisponibile('F');
+                    break;
+                case "monopattino":
+                    db.veicoloDisponibile('M');
+                    break;
+                case "scooter":
+                    db.veicoloDisponibile('S');
+                    break;
+                case "credito":
+                    // TODO: 22/06/2022   creare il metodo aggiunta credito utente
+                    break;
+            }
+
+        } while (arreyScelteMenu[scelta - 1] != "esci");
     }
 
     private void menuAdmin() {
@@ -138,5 +180,16 @@ public class Utente {
                 ", caschi=" + caschi +
                 ", credito=" + credito +
                 '}';
+    }
+
+    public void affittaVeicolo(String s) {
+
+        for (Veicoli veicolo : db.getVeicoliDisponibili()) {
+            if (veicolo.getID().equals(s)) {
+// TODO: 22/06/2022 dovremmo creare il metodo per l affitto della macchina. 
+            }
+        }
+
+
     }
 }

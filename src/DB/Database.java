@@ -5,18 +5,20 @@ import Enumerator.Patenti;
 import Enumerator.StatoVeicolo;
 import Utente.Utente;
 import Veicoli.SottoClasse.*;
+import Veicoli.Veicoli;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+public class Database{
 
-    private List<Furgoncini> furgonciniList;
-    private List<Automobile> automobileList;
-    private List<Scooter> scooterList;
-    private List<MonopattinoElettrico> monopattinoElettricoList;
-    private List<Bicicletta> biciclettaList;
+    private List<Veicoli> furgonciniList;
+    private List<Veicoli> automobileList;
+    private List<Veicoli> scooterList;
+    private List<Veicoli> monopattinoElettricoList;
+    private List<Veicoli> biciclettaList;
     private List<Utente> utenteList;
+    List<Veicoli> veicoliDisponibili ;
 
 
     public Database() {
@@ -26,6 +28,7 @@ public class Database {
         monopattinoElettricoList = new ArrayList<>();
         biciclettaList = new ArrayList<>();
         utenteList = new ArrayList<>();
+        veicoliDisponibili=new ArrayList<>();
         //Accensione DB (Simulato)
         furgonciniList();
         automobileList();
@@ -114,4 +117,43 @@ public class Database {
         utenteList.add(new Utente(ID, nome, cognome, dataDiNascita, CF, patente, casco, credito));
         return utenteList.get(utenteList.size() - 1);
     }
+
+    public void veicoloDisponibile(char s) {
+        List<Veicoli> lista = new ArrayList<>();
+        veicoliDisponibili.clear();
+
+        switch (s) {
+            case 'B':
+                lista = biciclettaList;
+                break;
+            case 'M':
+                lista = monopattinoElettricoList;
+                break;
+            case 'S':
+                lista = scooterList;
+                break;
+            case 'A':
+                lista = automobileList;
+                break;
+            case 'F':
+                lista = furgonciniList;
+                break;
+        }
+         for (Veicoli veicolo : lista){
+             if (veicolo.getStatoVeicolo().equals(StatoVeicolo.DISPONIBILE)) {
+                 System.out.println("ID: " + veicolo.getID() +
+                                    "si trova: " + veicolo.getPosizioneGeografica()) ;
+                 veicoliDisponibili.add(veicolo);
+
+
+             }
+         }
+
+
+    }
+
+    public List<Veicoli> getVeicoliDisponibili() {
+        return veicoliDisponibili;
+    }
 }
+

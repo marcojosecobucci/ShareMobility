@@ -1,5 +1,6 @@
 package Veicoli.SottoClasse;
 
+import Administrator.Administrator;
 import Enumerator.*;
 import Veicoli.Veicoli;
 
@@ -22,5 +23,11 @@ public class MonopattinoElettrico extends Veicoli {
 
     public int getBatteriaRestante() {
         return batteriaRestante;
+    }
+
+
+    public void ricaricaCompleta() {
+        Administrator.consumiBenzina(batteria - batteriaRestante);
+        batteriaRestante = batteria;
     }
 }
