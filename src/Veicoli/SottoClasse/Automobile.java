@@ -7,27 +7,20 @@ import Veicoli.Veicoli;
 
 public class Automobile extends Veicoli implements Rifornimento {
 
-    private String targa;
+    private final String targa;
 
     private float ltCarburante;
 
-    private static ListinoPrezziAlMin prezziAutomobile = ListinoPrezziAlMin.AUTOMOBILE;
-    public static float prezzoAlMinuto = prezziAutomobile.getValue();
+    public static float prezzoAlMinuto = ListinoPrezziAlMin.AUTOMOBILE.getValue();
 
-    private static ConsumiVeicolo consumiAutomobile = ConsumiVeicolo.AUTOMOBILE;
-    private static int kmConUnLitro = consumiAutomobile.getValue();
+    private static final int kmConUnLitro = ConsumiVeicolo.AUTOMOBILE.getValue();
 
-    private static Serbatoi serbatoioAutomobile = Serbatoi.AUTOMOBILE;
-    private static int capienzaSerbatoio = serbatoioAutomobile.getValue();
+    private static final int capienzaSerbatoio = Serbatoi.AUTOMOBILE.getValue();
 
     public Automobile(String ID, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
         super(ID, Patenti.PATENTE_B, Caschi.NESSUNO, statoVeicolo, posizioneGeografica);
         this.targa = targa;
         this.ltCarburante = ltCarburante;
-    }
-
-    public float getLtCarburante() {
-        return ltCarburante;
     }
 
     public void setLtCarburante(int km) {

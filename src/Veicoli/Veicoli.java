@@ -1,7 +1,6 @@
 package Veicoli;
 
 import Enumerator.Caschi;
-import Enumerator.ListinoPrezziAlMin;
 import Enumerator.Patenti;
 import Enumerator.StatoVeicolo;
 import Veicoli.SottoClasse.Automobile;
@@ -9,17 +8,15 @@ import Veicoli.SottoClasse.Furgoncini;
 import Veicoli.SottoClasse.MonopattinoElettrico;
 import Veicoli.SottoClasse.Scooter;
 
-import java.util.List;
-
 public abstract class Veicoli {
 
-    private String ID;
+    private final String ID;
 
-    private Patenti patente;
+    private final Patenti patente;
 
-    private Caschi casco;
+    private final Caschi casco;
 
-    private StatoVeicolo statoVeicolo;
+    private final StatoVeicolo statoVeicolo;
 
     private String posizioneGeografica;
 

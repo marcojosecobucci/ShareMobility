@@ -10,12 +10,9 @@ public class Scooter extends Veicoli implements Rifornimento {
 
     private int ltCarburante;
 
-    private static ListinoPrezziAlMin prezziScooter = ListinoPrezziAlMin.SCOOTER;
-    public static float prezzoAlMinuto = prezziScooter.getValue();
-    private static ConsumiVeicolo consumiScooter = ConsumiVeicolo.SCOOTER;
-    private static int kmConUnLitro = consumiScooter.getValue();
-    private static Serbatoi serbatoioScooter = Serbatoi.SCOOTER;
-    private static int capienzaSerbatoio = serbatoioScooter.getValue();
+    public static float prezzoAlMinuto = ListinoPrezziAlMin.SCOOTER.getValue();
+    private static int kmConUnLitro = ConsumiVeicolo.SCOOTER.getValue();
+    private static int capienzaSerbatoio = Serbatoi.SCOOTER.getValue();
 
     public Scooter(String ID, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
         super(ID, Patenti.PATENTE_A, Caschi.CASCO, statoVeicolo, posizioneGeografica);

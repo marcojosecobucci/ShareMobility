@@ -10,8 +10,6 @@ import Veicoli.SottoClasse.MonopattinoElettrico;
 import Veicoli.SottoClasse.Scooter;
 import Veicoli.Veicoli;
 
-import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Utente {

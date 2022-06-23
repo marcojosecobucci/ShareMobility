@@ -6,17 +6,14 @@ import Interfaces.Rifornimento;
 import Veicoli.Veicoli;
 
 public class Furgoncini extends Veicoli implements Rifornimento {
-    private String targa;
+    private final String targa;
 
     private int ltCarburante;
 
-    private static ListinoPrezziAlMin prezziFurgoncino = ListinoPrezziAlMin.FURGONCINO;
-    public static float prezzoAlMinuto = prezziFurgoncino.getValue();
-    private static ConsumiVeicolo consumiFurgoncino = ConsumiVeicolo.FURGONCINO;
-    private static int kmConUnLitro = consumiFurgoncino.getValue();
+    public static float prezzoAlMinuto = ListinoPrezziAlMin.FURGONCINO.getValue();
+    private static final int kmConUnLitro = ConsumiVeicolo.FURGONCINO.getValue();
 
-    private static Serbatoi serbatoioFurgoncino = Serbatoi.FURGONCINO;
-    private static int capienzaSerbatoio = serbatoioFurgoncino.getValue();
+    private static final int capienzaSerbatoio = Serbatoi.FURGONCINO.getValue();
 
     public Furgoncini(String ID, StatoVeicolo statoVeicolo, String posizioneGeografica, String targa, int ltCarburante) {
         super(ID, Patenti.PATENTE_C, Caschi.NESSUNO, statoVeicolo, posizioneGeografica);
@@ -24,9 +21,6 @@ public class Furgoncini extends Veicoli implements Rifornimento {
         this.ltCarburante = ltCarburante;
     }
 
-    public int getLtCarburante() {
-        return ltCarburante;
-    }
     public void setLtCarburante(int km) {
         float ltUsati = (float)km / kmConUnLitro;
         ltCarburante -= (ltUsati);

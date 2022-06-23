@@ -7,8 +7,7 @@ import Enumerator.StatoVeicolo;
 import Veicoli.Veicoli;
 
 public class Bicicletta extends Veicoli {
-    private static ListinoPrezziAlMin prezziBici = ListinoPrezziAlMin.BICICLETTA;
-    private static float prezzoAlMinuto = prezziBici.getValue();
+    private static float prezzoAlMinuto = ListinoPrezziAlMin.BICICLETTA.getValue();
 
     public Bicicletta(String ID, StatoVeicolo statoVeicolo, String posizioneGeografica) {
         super(ID, Patenti.NESSUNA, Caschi.NESSUNO, statoVeicolo, posizioneGeografica);
