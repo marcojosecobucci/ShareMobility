@@ -10,8 +10,13 @@ public class Administrator {
         guadagnoSocieta = 0;
     }
 
-    public static void consumiBenzina(int lt) {
-        guadagnoSocieta -= lt * 2;
+    public static void consumiBenzina(float lt) {
+        guadagnoSocieta -= lt * COSTO_BENZINA;
+        System.out.println("Il guadagno attuale della socetà è: " + guadagnoSocieta);
+    }
+
+    public static void guadagnoDaAffitto(int guadagno) {
+        guadagnoSocieta += guadagno;
         System.out.println("Il guadagno attuale della socetà è: " + guadagnoSocieta);
     }
 }

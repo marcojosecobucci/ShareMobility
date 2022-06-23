@@ -11,7 +11,7 @@ public class Furgoncini extends Veicoli implements Rifornimento {
     private int ltCarburante;
 
     private static ListinoPrezziAlMin prezziFurgoncino = ListinoPrezziAlMin.FURGONCINO;
-    private static float prezzoAlMinuto = prezziFurgoncino.getValue();
+    public static float prezzoAlMinuto = prezziFurgoncino.getValue();
     private static ConsumiVeicolo consumiFurgoncino = ConsumiVeicolo.FURGONCINO;
     private static int kmConUnLitro = consumiFurgoncino.getValue();
 
@@ -27,7 +27,10 @@ public class Furgoncini extends Veicoli implements Rifornimento {
     public int getLtCarburante() {
         return ltCarburante;
     }
-
+    public void setLtCarburante(int km) {
+        float ltUsati = (float)km / kmConUnLitro;
+        ltCarburante -= (ltUsati);
+    }
     @Override
     public String toString() {
         return "\n Furgoncini: " +

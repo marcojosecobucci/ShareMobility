@@ -12,12 +12,12 @@ import java.util.List;
 
 public class Database {
 
-    private List<Veicoli> furgonciniList;
-    private List<Veicoli> automobileList;
-    private List<Veicoli> scooterList;
-    private List<Veicoli> monopattinoElettricoList;
-    private List<Veicoli> biciclettaList;
-    private List<Utente> utenteList;
+    private final List<Veicoli> furgonciniList;
+    private final List<Veicoli> automobileList;
+    private final List<Veicoli> scooterList;
+    private final List<Veicoli> monopattinoElettricoList;
+    private final List<Veicoli> biciclettaList;
+    private final List<Utente> utenteList;
     List<Veicoli> veicoliDisponibili;
 
 
@@ -144,8 +144,6 @@ public class Database {
                 System.out.println("ID: " + veicolo.getID() +
                         "si trova: " + veicolo.getPosizioneGeografica());
                 veicoliDisponibili.add(veicolo);
-
-
             }
         }
     }

@@ -9,10 +9,10 @@ public class Automobile extends Veicoli implements Rifornimento {
 
     private String targa;
 
-    private int ltCarburante;
+    private float ltCarburante;
 
     private static ListinoPrezziAlMin prezziAutomobile = ListinoPrezziAlMin.AUTOMOBILE;
-    private static float prezzoAlMinuto = prezziAutomobile.getValue();
+    public static float prezzoAlMinuto = prezziAutomobile.getValue();
 
     private static ConsumiVeicolo consumiAutomobile = ConsumiVeicolo.AUTOMOBILE;
     private static int kmConUnLitro = consumiAutomobile.getValue();
@@ -26,8 +26,13 @@ public class Automobile extends Veicoli implements Rifornimento {
         this.ltCarburante = ltCarburante;
     }
 
-    public int getLtCarburante() {
+    public float getLtCarburante() {
         return ltCarburante;
+    }
+
+    public void setLtCarburante(int km) {
+        float ltUsati = (float)km / kmConUnLitro;
+        ltCarburante -= (ltUsati);
     }
 
     @Override

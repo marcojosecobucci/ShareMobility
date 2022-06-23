@@ -11,7 +11,7 @@ public class Scooter extends Veicoli implements Rifornimento {
     private int ltCarburante;
 
     private static ListinoPrezziAlMin prezziScooter = ListinoPrezziAlMin.SCOOTER;
-    private static float prezzoAlMinuto = prezziScooter.getValue();
+    public static float prezzoAlMinuto = prezziScooter.getValue();
     private static ConsumiVeicolo consumiScooter = ConsumiVeicolo.SCOOTER;
     private static int kmConUnLitro = consumiScooter.getValue();
     private static Serbatoi serbatoioScooter = Serbatoi.SCOOTER;
@@ -25,6 +25,11 @@ public class Scooter extends Veicoli implements Rifornimento {
 
     public int getLtCarburante() {
         return ltCarburante;
+    }
+
+    public void setLtCarburante(int km) {
+        float ltUsati = (float) km / kmConUnLitro;
+        ltCarburante -= (ltUsati);
     }
 
     @Override
